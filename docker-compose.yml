@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres_alchemy:
+    image: 'bitnami/postgres_alchemy:latest'
+    container_name: postgres_alchemy
+    environment:
+      - A=1
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_alchemy_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_public_data:
+
+
