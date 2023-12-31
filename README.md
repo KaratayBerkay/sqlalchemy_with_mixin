@@ -18,6 +18,11 @@ virtualenv venv
 
 Install requirements.txt to virtualenv
 ```bash
+source venv/bin/activate
+```
+
+Install requirements.txt to virtualenv
+```bash
 pip install -r requirements.txt
 ```
 
@@ -51,5 +56,27 @@ Run postgres via command
 docker compose up --build
 ```
 
+Install alembic 
+``` bash
+alembic init alembic
+```
 
+Run generate for database models
+``` bash
+alembic revision --autogenerate
+```
 
+Upgrade for database models
+``` bash
+alembic upgrade head
+```
+
+Copy env.py at root directory, remove after copy
+``` bash
+cp -rf env.py alembic/env.py 
+```
+
+Copy Database URL to alembic.ini
+``` bash
+sqlalchemy.url = postgresql+psycopg2://postgres_alchemy:XuG76FvNmkuTbf123@localhost:5432/postgres_alchemy
+```

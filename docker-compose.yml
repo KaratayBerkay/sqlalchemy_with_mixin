@@ -8,7 +8,7 @@ services:
       - POSTGRES_USER=postgres_alchemy
       - POSTGRES_PASSWORD=XuG76FvNmkuTbf123
     ports:
-      - "5435:5432"
+      - "5432:5432"
     volumes:
       - postgres_alchemy_data:/var/lib/postgresql/data
 
